@@ -7,59 +7,99 @@
       .hidden {
         display: none;
       }
+      body {
+        font-family: Helvetica;
+        margin: 10px;
+        padding: 0px;
+      }
+      h1, h2, h3, h4, h5 {
+        font-family: Baskerville;
+      }
     </style>
   </head>
   <body>
     <section class="header">
-      Hi! I'm Javier Honduvilla Coto
+      <span id="hi">Hi there! 👋🏻  </span> <span id="name">I'm Javier Honduvilla Coto</span>
       <br>
-      I'm interested in computers, humans, emojis and guacamole.
+      <span id="interests">I'm interested in computers, humans, emojis, travelling and guacamole.</span>
     </section>
     <section class="bio">
+      <h3>Experience:</h3>
       <ul>
         <li>Currently studying a BSc in Computer Engineering @uc3m</li>
-        <li>I was a 2016 summer intern @Shopify in the prodeng team</li>
+        <li>Summer '16 intern @ Shopify in the prodeng team</li>
+        <li class="hidden">Exchange student @ Aalto university</li>
+        <li>Summer '15 intern @ Fever doing Django</li>
       </ul>
     </section>
     <section class="contact">
-      Find me on
-        <a href="https://github.com/javierhonduco">GitHub</a>,
-        <a href="https://twitter.com/javierhonduco">Twitter</a>,
-        <a href="https://instagram.com/javierhonduco">Instagram</a>.
+      <h3>Find me on:</h3>
+      <a href="https://github.com/javierhonduco">GitHub</a>,
+      <a href="https://twitter.com/javierhonduco">Twitter</a>,
+      <a href="https://instagram.com/javierhonduco">Instagram</a>,
+      <a href="https://linkedin.com/in/javierhonduco">LinkedIn</a>
       <br>
       (My handle is javierhonduco in most places)
     </section>
-    <section class="projects hidden">
+    <section class="projects">
+      <h3>Projects:</h3>
       <ul>
         <li>
-          Nebrija. Ruby lib to parse the official spanish dictionary.
+          <span class="name">
+            Nebrija. Ruby lib to parse the official spanish dictionary.
+          </span>
         </li>
         <li>
-          Ruby C extension to sum arrays of floats faster using SSE extensions in modern x86 processors.
+          <span class="name">
+            Ruby C extension to sum arrays of floats faster using SSE extensions found in modern x86 processors.
+          </span>
         </li>
         <li>
-          Dulcinea. A simple frontend and JSON API for Nebrija.
+          <span class="name">
+            Dulcinea. A simple frontend and JSON API for Nebrija.
+          </span>
         </li>
         <li>
-          Raytracer in javascript inspired by a CG course and a project by antirez.
+          <span class="name">
+            Raytracer in javascript inspired by a CG course and a project by @antirez.
+          </span>
         </li>
         <li>
-          Simple python script to get your Spotify's more popular artists using your favourites as well as doing some boolean ops
+          <span class="name">
+            Simple python script to get your Spotify's more popular artists using your favourites as well as doing some set operations on them.
+          </span>
         </li>
         <li>
-          C to forth compiler written in C using bison with direct traslation
+          <span class="name">
+            C to forth compiler written in C using bison with direct traslation.
+          </span>
         </li>
         <li>
-          perform set operations in twitter
+          <span class="name">
+            Perform set operations in Twitter.
+          </span>
         </li>
         <li>
-          Telegram bot written in Ruby to display Aalto uni cafeteria's menu
+          <span class="name">
+            Telegram bot written in Ruby to display Aalto uni cafeteria's menu.
+          </span>
         </li>
         <li>
-          University cantine redesign using service design techniques
+          <span class="name">
+            University cafeteria redesign following a service design approach.
+          </span>
+          <div class="whil hidden">
+            I learnt how to do questionnaires, user research, UX, UI design, product design.
+          </div>
         </li>
       </ul>
     </section>
+    <!--<section id="presentations">
+      <h3>Presentations</h3>
+      <ul>
+        <li>asd</li>
+      </ul>
+    </section>-->
   </body>
   <script type="application/javascript">
     (function(){
@@ -68,7 +108,7 @@
       document.querySelector('html').addEventListener('click', function(){
         clicks += 1;
         if(clicks > 5){
-          document.querySelector('html').innerHTML = '<marquee><h1>relax, yo<h1></marquee>';
+          //document.querySelector('html').innerHTML = '<marquee><h1>relax, yo<h1></marquee>';
         }
       });
     })();
