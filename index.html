@@ -16,8 +16,8 @@
       h1, h2, h3, h4, h5 {
         font-family: Baskerville;
       }
-      .content {
-        margin-left: 40px;
+      section {
+        margin-top: 50px;
       }
       ul {
         padding-left: 20px;
@@ -44,12 +44,13 @@
     </style>
   </head>
   <body>
+    <canvas id="canvas" class="" width="500" height="75"></canvas>
     <section class="header">
       <h3>Ohai! 👋🏻  </h3>
       <div class="content">
         <span class="name waid">I'm Javier Honduvilla Coto, a BSc in Computer Engineering student <m>@UC3M</m> in <!-- ☀️ -ny -->Madrid.
           <br><br>
-          I was a '16 summer intern <m>@Shopify</m> in the prodeng team.</span>
+          I was a '16 summer intern <m>@Shopify</m> in the production engineering team.</span>
         <br>
         <span id="interests">My interests span computers, humans, emojis, travelling,<!-- Oxford commas, --> and guacamole.</span>
         <br>
@@ -107,16 +108,21 @@
         </ul>
       </div>
     </section>
-    <canvas id="canvas" class="hidden" width="400" height="200"></canvas>
     <script type="application/javascript">
       (function(){
         'use strict';
-        var canvas = document.getElementById("canvas");
-        var ctx = canvas.getContext("2d");
+        var WIDTH = 500;
+        var HEIGHT = 75;
+        var VERTICES = 50;
+
+        var canvas = document.getElementById('canvas');
+        // canvas.className = '';
+        var ctx = canvas.getContext('2d');
+
         var points = [];
         var before = window.performance.now();
-        for(var i=0; i<20; i++){
-          points.push([parseInt(Math.random()*400),parseInt(Math.random()*200)]);
+        for(var i=0; i<VERTICES; i++){
+          points.push([parseInt(Math.random()*(WIDTH-8))+4, parseInt(Math.random()*(HEIGHT-8)+4)]);
         }
         function Comparator(a, b) {
           if (a[0] < b[0]) return -1;
@@ -144,9 +150,9 @@
             ctx.moveTo(points[i][0], points[i][1]);
             ctx.lineTo(k_5[k][1][0], k_5[k][1][1]);
             ctx.stroke();
-            //console.log(points[i])
           }
         }
+
         console.log(window.performance.now()-before);
       })();
     </script>
@@ -154,13 +160,7 @@
     <script type="application/javascript">
       (function(){
         'use strict';
-        console.log('want to /party? :D')
-        var clicks = 0;
-        document.querySelector('html').addEventListener('click', function(){
-          clicks += 1;
-          if(clicks > 5){
-          }
-        });
+        console.log('hola, want to /party? :D')
       })();
     </script>
 
