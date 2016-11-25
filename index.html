@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>javier's stuff</title>
-    <style>
+    <title>javierhonduco's stuff</title>
+    <style type="text/css">
       .hidden {
         display: none;
       }
@@ -47,7 +47,9 @@
     <section class="header">
       <h3>Ohai! 👋🏻  </h3>
       <div class="content">
-        <span id="name waid">I'm Javier Honduvilla Coto, a BSc in Computer Engineering student @UC3M in <!-- ☀️ -ny -->Madrid. I was a '16 summer intern @Shopify in the prodeng team.</span>
+        <span class="name waid">I'm Javier Honduvilla Coto, a BSc in Computer Engineering student <m>@UC3M</m> in <!-- ☀️ -ny -->Madrid.
+          <br><br>
+          I was a '16 summer intern <m>@Shopify</m> in the prodeng team.</span>
         <br>
         <span id="interests">My interests span computers, humans, emojis, travelling,<!-- Oxford commas, --> and guacamole.</span>
         <br>
@@ -71,99 +73,104 @@
       <div class="content">
         <ul>
           <li>
-            <a href="">Corruption Monkey</a> is a small CLI to flip bits in files used to test a database integrity checker.
+            <a href="https://github.com/javierhonduco/corruption_monkey">Corruption Monkey</a> is a small CLI to flip bits in files used to test a database integrity checker.
           </li>
           <li>
-            <a href="">Nebrija</a>, a Ruby lib to parse the official spanish dictionary.
+            <a href="https://github.com/javierhonduco/nebrija">Nebrija</a>, a Ruby lib to parse the official Spanish dictionary.
           </li>
           <li>
-            <a href="">fast_sum</a> is a Ruby extension written in C to sum arrays of floats faster leveraging SSE extensions found in modern x86 processors.
+            <a href="https://github.com/javierhonduco/ruby-vectorized-sum">FastSum</a> is a Ruby extension written in C to sum arrays of floats faster leveraging SSE extensions found in modern x86 processors.
           </li>
           <li>
-            <a href="">Dulcinea</a>: A simple frontend and JSON API for Nebrija.
+            <a href="https://github.com/javierhonduco/dulcinea">Dulcinea</a>: A simple frontend and JSON API for Nebrija.
           </li>
           <li>
-            <a href="">A simple raytracer</a> in javascript inspired by a CG course and a project by Antirez.
+            <a href="https://github.com/javierhonduco/traceur">A simple raytracer</a> in javascript inspired by a CG course and a project by Antirez.
           </li>
           <li>
-            <a href="">Python script</a> to get your Spotify's most popular artists using your favourited songs as well as being able to perform some set operations over them.
+            <a href="https://github.com/javierhonduco/sptfy-tools">Python script</a> to get your Spotify's most popular artists using your favourited songs as well as being able to perform some set operations over them.
+
           </li>
           <li>
-            <a href="">C to forth compiler</a> written in C using bison with direct traslation.
+            <a href="https://github.com/javierhonduco/dragon">C to forth compiler</a> written in C using bison with direct translation.
           </li>
           <li>
-            Perform set operations with Twitter's data with <a href="">Tvven</a>!
+            Perform set operations with Twitter's data with <a href="https://github.com/javierhonduco/tvvenn">Tvvenn</a>!
           </li>
           <li>
-            Telegram bot to display Aalto uni cafeteria's differente menus.
+            <a href="https://github.com/javierhonduco/aalto-appetite">Telegram bot</a> that displays Aalto uni cafeteria's differente menus.
           </li>
           <li>
-            <a href="">UC3M's cafeteria redesign</a> following a service design approach.
+            <a href="http://skipqueues.es/">UC3M's cafeteria redesign</a> following a service design approach.
+
           </li>
         </ul>
       </div>
     </section>
-  </div>
     <canvas id="canvas" class="hidden" width="400" height="200"></canvas>
     <script type="application/javascript">
-      var canvas = document.getElementById("canvas");
-      var ctx = canvas.getContext("2d");
-      var points = [];
-      var before = window.performance.now();
-      for(var i=0; i<20; i++){
-        points.push([parseInt(Math.random()*400),parseInt(Math.random()*200)]);
-      }
-      function Comparator(a, b) {
-        if (a[0] < b[0]) return -1;
-        if (a[0] > b[0]) return 1;
-        return 0;
-      }
-      for(var i=0; i<points.length; i++){
-        ctx.beginPath();
-        ctx.ellipse(points[i][0], points[i][1], 3, 3, 45 * Math.PI/180, 0, 2 * Math.PI);
-        ctx.stroke();
-      }
-
-      for(var i=0; i<points.length; i++){
-        var distances = []
-          for(var j=0; j<points.length; j++){
-            if(i===j){ continue; }
-            var xs = Math.pow(points[i][0]-points[j][0], 2);
-            var ys = Math.pow(points[i][1]-points[j][1], 2);
-            var distance = Math.sqrt(xs+ys)
-              distances.push([distance, [points[j][0], points[j][1]]]);
-          }
-        var k_5 = distances.sort(Comparator);
-        for(var k=0; k<7; k++){
-          ctx.beginPath();
-          ctx.moveTo(points[i][0], points[i][1]);
-          ctx.lineTo(k_5[k][1][0], k_5[k][1][1]);
-          ctx.stroke();
-          //console.log(points[i])
+      (function(){
+        'use strict';
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var points = [];
+        var before = window.performance.now();
+        for(var i=0; i<20; i++){
+          points.push([parseInt(Math.random()*400),parseInt(Math.random()*200)]);
         }
-      }
-      console.log(window.performance.now()-before);
+        function Comparator(a, b) {
+          if (a[0] < b[0]) return -1;
+          if (a[0] > b[0]) return 1;
+          return 0;
+        }
+        for(var i=0; i<points.length; i++){
+          ctx.beginPath();
+          ctx.ellipse(points[i][0], points[i][1], 3, 3, 45 * Math.PI/180, 0, 2 * Math.PI);
+          ctx.stroke();
+        }
+
+        for(var i=0; i<points.length; i++){
+          var distances = [];
+            for(var j=0; j<points.length; j++){
+              if(i===j){ continue; }
+              var xs = Math.pow(points[i][0]-points[j][0], 2);
+              var ys = Math.pow(points[i][1]-points[j][1], 2);
+              var distance = Math.sqrt(xs+ys)
+                distances.push([distance, [points[j][0], points[j][1]]]);
+            }
+          var k_5 = distances.sort(Comparator);
+          for(var k=0; k<7; k++){
+            ctx.beginPath();
+            ctx.moveTo(points[i][0], points[i][1]);
+            ctx.lineTo(k_5[k][1][0], k_5[k][1][1]);
+            ctx.stroke();
+            //console.log(points[i])
+          }
+        }
+        console.log(window.performance.now()-before);
+      })();
+    </script>
+
+    <script type="application/javascript">
+      (function(){
+        'use strict';
+        console.log('want to /party? :D')
+        var clicks = 0;
+        document.querySelector('html').addEventListener('click', function(){
+          clicks += 1;
+          if(clicks > 5){
+          }
+        });
+      })();
+    </script>
+
+    <script type="application/javascript">
+      !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+          arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+      d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+        insertBefore(d,q)}(window,document,'script','_gs');
+
+        _gs('GSN-788040-P');
     </script>
   </body>
-  <script type="application/javascript">
-    (function(){
-      'use strict';
-      var clicks = 0;
-      document.querySelector('html').addEventListener('click', function(){
-        clicks += 1;
-        if(clicks > 5){
-          //document.querySelector('html').innerHTML = '<marquee><h1>relax, yo<h1></marquee>';
-        }
-      });
-    })();
-  </script>
-
-  <script>
-    !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
-        arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
-    d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
-      insertBefore(d,q)}(window,document,'script','_gs');
-
-      _gs('GSN-788040-P');
-  </script>
 </html>
