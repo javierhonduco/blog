@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>javier's stuff</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      Hi! I'm Javier Honduvilla Coto
+      <br>
+      I'm interested in computers, humans, emojis and guacamole.
+    </section>
+    <section class="bio">
+      <ul>
+        <li>Currently studying a BSc in Computer Engineering @uc3m</li>
+        <li>I was a 2016 summer intern @Shopify in the prodeng team</li>
+      </ul>
+    </section>
+    <section class="contact">
+      Find me on
+        <a href="https://github.com/javierhonduco">GitHub</a>,
+        <a href="https://twitter.com/javierhonduco">Twitter</a>,
+        <a href="https://instagram.com/javierhonduco">Instagram</a>.
+      <br>
+      (My handle is javierhonduco in most places)
+    </section>
+    <section class="projects hidden">
+      <ul>
+        <li>
+          Nebrija. Ruby lib to parse the official spanish dictionary.
+        </li>
+        <li>
+          Ruby C extension to sum arrays of floats faster using SSE extensions in modern x86 processors.
+        </li>
+        <li>
+          Dulcinea. A simple frontend and JSON API for Nebrija.
+        </li>
+        <li>
+          Raytracer in javascript inspired by a CG course and a project by antirez.
+        </li>
+        <li>
+          Simple python script to get your Spotify's more popular artists using your favourites as well as doing some boolean ops
+        </li>
+        <li>
+          C to forth compiler written in C using bison with direct traslation
+        </li>
+        <li>
+          perform set operations in twitter
+        </li>
+        <li>
+          Telegram bot written in Ruby to display Aalto uni cafeteria's menu
+        </li>
+        <li>
+          University cantine redesign using service design techniques
+        </li>
+      </ul>
+    </section>
+  </body>
+  <script type="application/javascript">
+    (function(){
+      'use strict';
+      var clicks = 0;
+      document.querySelector('html').addEventListener('click', function(){
+        clicks += 1;
+        if(clicks > 5){
+          document.querySelector('html').innerHTML = '<marquee><h1>relax, yo<h1></marquee>';
+        }
+      });
+    })();
+  </script>
+</html>
