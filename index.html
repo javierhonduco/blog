@@ -33,6 +33,9 @@
       section {
         margin-top: 50px;
       }
+      section:first-child {
+        margin-top: 0px;
+      }
       section.contact a:after {
         content: ',';
         position: relative;
@@ -50,7 +53,9 @@
     </style>
   </head>
   <body>
-    <canvas id="canvas" class="" width="500" height="75"></canvas>
+    <section class="canvas">
+      <canvas id="canvas" class="" width="500" height="75"></canvas>
+    </section>
     <section class="header">
       <h3>Ohai! 👋🏻  </h3>
       <div class="content">
@@ -66,13 +71,13 @@
       <h3>Find me on:</h3>
       <div class="content">
         <div class="links">
-          <a href="https://github.com/javierhonduco">GitHub</a>
           <a href="https://twitter.com/javierhonduco">Twitter</a>
+          <a href="https://github.com/javierhonduco">GitHub</a>
           <a href="https://instagram.com/javierhonduco">Instagram</a>
           <a href="https://speakerdeck.com/javierhonduco">Speakerdeck</a>
           <a href="https://linkedin.com/in/javierhonduco">LinkedIn</a>
         </div>
-        <span>(My handle is javierhonduco in most places)</span>
+        <span>(My handle is <i>javierhonduco</i> in most places)</span>
        </div>
     </section>
     <section class="projects">
@@ -92,7 +97,7 @@
             <a href="https://github.com/javierhonduco/dulcinea">Dulcinea</a>: A simple frontend and JSON API for Nebrija.
           </li>
           <li>
-            <a href="https://github.com/javierhonduco/traceur">A simple raytracer</a> in javascript inspired by a CG course and a project by Antirez.
+            <a href="https://rawgit.com/javierhonduco/traceur/a4fb32bafaa7ed40cf8d8a06708e3def1d718b32/ray.html">A simple raytracer</a> in javascript inspired by a CG course and a project by Antirez.
           </li>
           <li>
             <a href="https://github.com/javierhonduco/sptfy-tools">Python script</a> to get your Spotify's most popular artists using your favourited songs as well as being able to perform some set operations over them.
@@ -189,7 +194,7 @@
           draw_vertices(ctx, points);
           draw_knn(ctx, points, K);
           var elapsed_time = window.performance.now()-before;
-          console.log(`_K means#0 took_: ${elapsed_time}`)
+          //console.log(`_K means#0 took_: ${elapsed_time}`)
 
           // Experiments with mouse events :)
           function update_mouse(coordinates) {
