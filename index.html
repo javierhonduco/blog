@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>javierhonduco's stuff</title>
     <style type="text/css">
       .hidden {
@@ -14,6 +14,7 @@
         margin: 30px auto 60px auto;
         padding: 0px;
       }
+
       h3 {
         font-family: Baskerville;
       }
@@ -47,6 +48,12 @@
       }
       section.projects ul li {
         margin-top: 8px;
+      }
+
+      @media all and (max-width: 400px) {
+        body, canvas {
+          width: 300px;
+        }
       }
     </style>
   </head>
