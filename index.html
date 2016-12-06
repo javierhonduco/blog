@@ -30,6 +30,22 @@
       }
       section {
         margin-top: 50px;
+        -webkit-font-smoothing: antialiased;
+      }
+      section ul {
+        padding-left: 17px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      section ul li {
+        margin-top: 8px;
+        padding-left: 0.7em;
+        text-indent: -.7em;
+      }
+      section ul li:before {
+        content: "• ";
+        color: rgb(128, 128, 128);
       }
       section.contact a:after {
         content: ',';
@@ -39,11 +55,12 @@
       section.contact a:last-child:after {
         content: '';
       }
-      section.projects ul {
-        padding-left: 17px;
-      }
-      section.projects ul li {
-        margin-top: 8px;
+      section.writings time {
+        display: block;
+        padding-top: 6px;
+        padding-left: 0.8em;
+        font-size: 11px;
+        color: rgba(0, 0, 0, 0.57);
       }
 
       @media all and (max-width: 499px) {
@@ -119,6 +136,16 @@
           </li>
         </ul>
       </div>
+    </section>
+    <section class="writings">
+      <h3>Writings</h3>
+
+      <ul>
+        <li>
+          <a href="/vectorising-ruby-for-fun-and-profit">Vectorising Ruby for fun and profit</a>
+          <time>December 6, 2016</time>
+        </li>
+      </ul>
     </section>
     <div>
       <!-- Le Javascript -->
