@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e # halt script on error
+
+echo "=> Building site..."
+bundle exec jekyll build
+echo "=> Checking html & links..."
+bundle exec htmlproofer ./_site --http-status-ignore "999"

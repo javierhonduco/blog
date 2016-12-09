@@ -1,0 +1,15 @@
+title: Javier Honduvilla Coto
+description: > # this means to ignore newlines until "baseurl:"
+  Javier Honduvilla Coto personal page
+baseurl: ""
+url: ""
+
+gosquared_token: 'GSN-583350-L'
+permalink: /blog/:title
+markdown: kramdown
+
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock

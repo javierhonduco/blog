@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<header>
+  <canvas id="canvas" class="" width="500" height="75"></canvas>
+</header>
+<section class="header">
+  <h3>Ohai! 👋🏻  </h3>
+  <div class="content">
+    <span class="name waid">I'm Javier Honduvilla Coto, a BSc in Computer Engineering student at <a href="https://uc3m.es"><mark>UC3M</mark></a> in <!-- ☀️ -ny -->Madrid.
+      <br><br>
+      I was a '16 summer intern at <a href="https://shopify.com"><mark>Shopify</mark></a> in the production engineering team.</span>
+    <br>
+    <span id="interests">My interests span computers, humans, emojis, travelling,<!-- Oxford commas, --> and guacamole.</span>
+    <br>
+  </div>
+</section>
+<section class="contact">
+  <h3>Find me on:</h3>
+  <div class="content">
+    <div class="links">
+      <a href="https://twitter.com/javierhonduco">Twitter</a>
+      <a href="https://github.com/javierhonduco">GitHub</a>
+      <a href="https://instagram.com/javierhonduco">Instagram</a>
+      <a href="https://speakerdeck.com/javierhonduco">Speakerdeck</a>
+      <a href="https://linkedin.com/in/javierhonduco">LinkedIn</a>
+    </div>
+    <span>(My handle is <i>javierhonduco</i> in most places)</span>
+  </div>
+</section>
+<section class="projects">
+  <h3>Projects:</h3>
+  <div class="content">
+    <ul>
+      <li>
+      <a href="https://github.com/javierhonduco/corruption_monkey">Corruption Monkey</a> is a small CLI to flip bits in files used to test a database integrity checker.
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/nebrija">Nebrija</a>, a Ruby lib to parse the official Spanish dictionary.
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/ruby-vectorized-sum">FastSum</a> is a Ruby extension written in C to sum arrays of floats faster leveraging SSE extensions found in modern x86 processors.
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/dulcinea">Dulcinea</a>: A simple frontend and JSON API for Nebrija.
+      </li>
+      <li>
+      <a href="https://rawgit.com/javierhonduco/traceur/a4fb32bafaa7ed40cf8d8a06708e3def1d718b32/ray.html">A simple raytracer</a> in javascript inspired by a CG course and a project by Antirez.
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/sptfy-tools">Python script</a> to get your Spotify's most popular artists using your favourited songs as well as being able to perform some set operations over them.
+
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/dragon">C to forth compiler</a> written in C using bison with direct translation.
+      </li>
+      <li>
+      Perform set operations with Twitter's data with <a href="https://github.com/javierhonduco/tvvenn">Tvvenn</a>!
+      </li>
+      <li>
+      <a href="https://github.com/javierhonduco/aalto-appetite">Telegram bot</a> that displays Aalto uni cafeteria's different menus.
+      </li>
+      <li>
+      <a href="http://skipqueues.es/">UC3M's cafeteria redesign</a> following a service design approach.
+
+      </li>
+    </ul>
+  </div>
+</section>
+{% if site.posts.size > 0 %}
+  <section class="writings">
+    <h3>Writings</h3>
+
+    <ul>
+      {% for post in site.posts %}
+        <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <time>{{ post.date | date: "%B %-d, %Y" }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+
+{% include knn.html %}
