@@ -76,6 +76,7 @@ DEPENDENCIES
   html-proofer
   jekyll (= 3.3.1)
   jekyll-feed (~> 0.6)
+  rouge
 
 RUBY VERSION
    ruby 2.3.1p112
