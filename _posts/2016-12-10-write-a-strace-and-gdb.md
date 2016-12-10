@@ -28,6 +28,7 @@ Both programs are similar in structure, they do a basic parsing of the command l
 Depending on the arguments, it `fork`s + `exec`s a new process with the aforementioned `PTRACE_ATTACH` on the parent process and `PTRACE_TRACEME` on the child.
 
 Once that has been done, `ptrace` is executed again.
+
 #### In "mystrace"
 we want to capture system calls, so we request it with `PTRACE_SYSCALL` as its argument.
 As it's executed before and after every system call, and we are in this case only interested on the system call name and return code we are skipping those iterations of the loop.
