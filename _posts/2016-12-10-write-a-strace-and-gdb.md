@@ -34,7 +34,7 @@ As it's executed before and after every system call, and we are in this case onl
 
 After that, we fetch the registers, specifically `orig_rax`, where the id for the system call is stored, and `rax`, where we can find the result of the system call.
 
-We want to print the system call name and exit code. Unfortunately, we have the id, so I've created with the help of a simple Ruby script a structure to map those. You can find it in the header.
+We want to print the system call name and exit code. Unfortunately, we have the id, so I've created, with the help of a simple Ruby script, an array to map those. You can find it in the appropriate header.
 
 #### In "mygdb"
 the objective was to be able to execute step by step, going to the end and showing the registers.
@@ -45,20 +45,17 @@ In the `prompt_user` function, the program gets the user input and reacts accord
 ### Conclusion
 Implementing two tools that I love has been a blast. I can realise even more how the passionate and hard work of many individuals around the world has made those tools as amazing as they are now.
 
-Implementing half of the features they have, including being more portable would be something pretty crazy!
+Coding half of the features they have, including being more portable would be something pretty crazy to do!
 
-Even thought those two programs are just toys and nothing comparable to `strace` or `gdb`, despite its name, they manage to get the basic information in a reasonable amount of code and complexity!
+Even thought those two programs are just toys and nothing comparable to `strace` or `gdb` (despite its name) they manage to get the basic information in a reasonable amount of code and complexity IMHO!
 
-Hope you enjoy it! :)
+Hope you enjoyed it! :)
+
+(I'm not, by any means a C or `ptrace` expert, I just played with it for the first time. Feel free to correct anything you think it's not ok! :))
 
 ### Notes & links
-* Vector operations are also known as SIMD (single instruction multiple data)
-* Tenderlove's post
-* moar doc
-* wikipedia article...
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-{% endhighlight %}
+* [`ptrace` man pages](http://man7.org/linux/man-pages/man2/ptrace.2.html)
+* [Julia Evan's wonderful zines](http://jvns.ca/zines/)
+* [Filippo Valsorda's Linux sycall table](https://filippo.io/linux-syscall-table/)
+* [strace source code](https://github.com/bnoordhuis/strace)
+* [GDB project page](https://www.sourceware.org/gdb/)
