@@ -22,7 +22,7 @@ Among them, the 2 that are going to be really interesting for the implementation
 Another really interesting argument we can use is `PTRACE_GETREGS` which allows us to read the registers of the process. (We also have `PTRACE_SETREGS` to set some registers to custom values).
 
 ### mystrace & mygdb
-I ended up implementing two C programs: "mystrace" and "mygdb".
+I ended up implementing two C programs: "mystrace" and "mygdb" which source code can be found [here](https://github.com/javierhonduco/write-a-strace-and-gdb).
 
 Both programs are similar in structure, they do a basic parsing of the command line arguments, as they should work with `./program -p <pid>` option as well as `./program ls`.
 Depending on the arguments, it `fork`s + `exec`s a new process with the before mentioned `PTRACE_ATTACH` on the parent process and `PTRACE_TRACEME` on the child.
@@ -59,3 +59,4 @@ Hope you enjoyed it! :)
 * [Filippo Valsorda's Linux sycall table](https://filippo.io/linux-syscall-table/)
 * [strace source code](https://github.com/bnoordhuis/strace)
 * [GDB project page](https://www.sourceware.org/gdb/)
+* [the code of this post](https://github.com/javierhonduco/write-a-strace-and-gdb)
