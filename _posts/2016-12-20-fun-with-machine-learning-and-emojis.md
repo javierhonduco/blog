@@ -6,7 +6,7 @@ author: Javier Honduvilla Coto
 categories: emojis python scikit-learn machine-learning text-mining
 ---
 
-(**TL;DR**: For a university course I've built a classifier that returns a emoji given some text: [https://github.com/javierhonduco/emoji-prediction](https://github.com/javierhonduco/emoji-prediction))
+(**TL;DR**: For a university course I've built a classifier that returns an emoji given some text: [https://github.com/javierhonduco/emoji-prediction](https://github.com/javierhonduco/emoji-prediction))
 
 
 As the final project of a course on artificial intelligence applications I'm taking at my university we were given total
