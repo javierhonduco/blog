@@ -6,13 +6,13 @@ author: Javier Honduvilla Coto
 categories: emojis python scikit-learn machine-learning text-mining
 ---
 
-As the final project of a course on artificial intelligence applications I'm taking at my university we were given total 
+As the final project of a course on artificial intelligence applications I'm taking at my university we were given total
 freedom to develop whatever we wanted.
 
 After some days thinking about what could I propose to my team, I thought on **emojis**. I really love emojis 💞. They are an awesome way to express oneself in a very nice way.
 
 So... what if we build a text classifier in which, given a text in English you would get an emoji that suits? 😁
- 
+
 There are a couple of essays and studies on emojis and how they actually are new _vocabulary_ that we are using and they are way better than anything I can write on the topic, so let's get to the steps we did in this assignment.
 
 ### Fetching tagged text
@@ -27,8 +27,8 @@ We tried developing a prototype which can be found in `fetcher/benchmark.py` tha
 of them. We thought that more than 10K tweets would be enough. However, for several reasons that I will explain in the preprocessing part, some tweets may be discarded, so we wanted to fetch way more.
 
 Once we saw that we were able to download around 9 tweets/s we started refactoring the code and making it more reliable as there are
-some exceptions that can be raised from the twitter library we were using, twython. 
-We also split the network and the I/O part in order to be a bit faster. For that purpose, we used two threads, one for each task. We also used as well Python's stdlib thread-safe queue to communicate both threads. 
+some exceptions that can be raised from the twitter library we were using, twython.
+We also split the network and the I/O part in order to be a bit faster. For that purpose, we used two threads, one for each task. We also used as well Python's stdlib thread-safe queue to communicate both threads.
 
 With that approach, we achieved a slightly higher download rate at around 14tweets/s (yeah, it's possible that disk IO on that laptop
 is plain horrible).
@@ -50,7 +50,7 @@ First of all, we cleaned the data doing the following in `preprocessing.py`:
 
 Then we had something we can starting working on!
 
-With the help of `NLTK` we removed the stopwords, or really common words that aren't really interesting for this problem, 
+With the help of `NLTK` we removed the stopwords, or really common words that aren't really interesting for this problem,
 such as conjunctions and determinants and finally we _stemmed_ them. That means reducing to their root, so for example "calculus" becomes
 "calc" as it's going to be better for the classification.
 
@@ -74,26 +74,39 @@ We run that with several algorithms that can be found at the end of the file.
 With the reported accuracy and the timing, we can get a nice idea of how the different classifiers behave and which one is better for
 the problem. We can also tune the parameters passing an optional dictionary to `learn_with`.
 
+### Results
+
+|       Classifier        | Accuracy in test  | Training time           |
+|:-----------------------:|:-----------------:|:-----------------------:|
+| DecisionTreeClassifier  |       42.75%      |         325.722s        |
+| SGDClassifier           |       41.25%      |         119.919s        |
+| MultinomialNB           |       35.50%      |          1.687s         |
+| GaussianNB              |       34.45%      |          1.882s         |
+| SVC with sigmoid kernel |       22.90%      |         892.484s        |
+
+
 ### Conclusion
 
-For an input set of 10.000 tweets, using 8.000 for training and 2.000 for test, with around 50 different emojis, we got a rough accuracy 
+For an input set of 10.000 tweets, using 8.000 for training and 2.000 for test, with around 50 different emojis, we got a rough accuracy
 of 40% with a decision tree.
 
 Even thought that our professor liked the result, I was expecting a higher accuracy tbqh.
 
-Machine learning and natural language processing are hard, but now they look like being loads of fun to me! 😄 
+Machine learning and natural language processing are hard, but now they look like being loads of fun to me! 😄
 
 ### Notes & links
 
-* Remember that having your class balanced is really important. We maybe noticed a bit late 😓. Too many "😂"!
+* We would have loved trying other techniques such as CNN (Convolutional Neural Networks) as well as other classifiers, but we were too time constrained :sadpanda:.
+* Remember that having your class balanced is really important. We maybe noticed a bit late 😓. Too many "😂"s!
 * Many tweets have multiples emojis, however we just picked the first one for simplicity's sake.
 * `emoji_stats.py` computes the occurences of emojis to get some basic statistics. It uses all the emojis found on a tweet so it can build a "typically those emojis go together" dictionary. That already gives us plenty of information.
-* Wonderful libraries we have used:
-  - [scikit-learn](scikit-learn.org)
+* Wonderful libraries/ projects we have used:
+  - [scikit-learn](http://scikit-learn.org)
   - [NLTK](http://www.nltk.org/)
   - [Flask](http://flask.pocoo.org/)
   - [numpy](http://www.numpy.org/)
   - [scipy](http://www.scipy.org/)
   - [twython](https://github.com/ryanmcgrath/twython)
   - [emoji lib](https://pypi.python.org/pypi/emoji)
+  - [sentry](https://sentry.io) (for error reporting)
 * [the code](https://github.com/javierhonduco/emoji-prediction)
