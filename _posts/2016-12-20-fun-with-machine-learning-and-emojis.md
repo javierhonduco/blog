@@ -6,6 +6,9 @@ author: Javier Honduvilla Coto
 categories: emojis python scikit-learn machine-learning text-mining
 ---
 
+(**TL;DR**: For a university course I've built a classifier that returns a emoji given some text: [https://github.com/javierhonduco/emoji-prediction](https://github.com/javierhonduco/emoji-prediction))
+
+
 As the final project of a course on artificial intelligence applications I'm taking at my university we were given total
 freedom to develop whatever we wanted.
 
@@ -96,6 +99,7 @@ Machine learning and natural language processing are hard, but now they look lik
 
 ### Notes & links
 
+* Don't take this too seriously. I'm not a machine learning expert and probably you can do it in a more efficient, better, more awesome way! Feel free to tell me what could be improved :)
 * We would have loved trying other techniques such as CNN (Convolutional Neural Networks) as well as other classifiers, but we were too time constrained :sadpanda:.
 * Remember that having your class balanced is really important. We maybe noticed a bit late 😓. Too many "😂"s!
 * Many tweets have multiples emojis, however we just picked the first one for simplicity's sake.
@@ -109,4 +113,4 @@ Machine learning and natural language processing are hard, but now they look lik
   - [twython](https://github.com/ryanmcgrath/twython)
   - [emoji lib](https://pypi.python.org/pypi/emoji)
   - [sentry](https://sentry.io) (for error reporting)
-* [the code](https://github.com/javierhonduco/emoji-prediction)
+* [The code](https://github.com/javierhonduco/emoji-prediction)

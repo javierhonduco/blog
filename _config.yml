@@ -7,6 +7,10 @@ url: ""
 gosquared_token: 'GSN-583350-L'
 permalink: /blog/:title
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 highlighter: rouge
 
 gems:
