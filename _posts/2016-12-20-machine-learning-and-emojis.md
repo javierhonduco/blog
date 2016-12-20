@@ -9,7 +9,7 @@ categories: emojis python scikit-learn machine-learning text-mining
 As the final project of a course on artificial intelligence applications I'm taking at my university we were given total 
 freedom to develop whatever we wanted.
 
-After some days thinking about what could I propose to my team, I thought on *emojis*. I really love emojis 💞. They are an awesome way to 
+After some days thinking about what could I propose to my team, I thought on **emojis**. I really love emojis 💞. They are an awesome way to 
 express oneself in a very nice way.
 
 So... what if we build a text classifier in which, given a text in English you would get an emoji that suits? 😁
