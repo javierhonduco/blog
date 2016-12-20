@@ -9,8 +9,7 @@ categories: emojis python scikit-learn machine-learning text-mining
 As the final project of a course on artificial intelligence applications I'm taking at my university we were given total 
 freedom to develop whatever we wanted.
 
-After some days thinking about what could I propose to my team, I thought on **emojis**. I really love emojis 💞. They are an awesome way to 
-express oneself in a very nice way.
+After some days thinking about what could I propose to my team, I thought on **emojis**. I really love emojis 💞. They are an awesome way to express oneself in a very nice way.
 
 So... what if we build a text classifier in which, given a text in English you would get an emoji that suits? 😁
  
@@ -39,7 +38,7 @@ We then set up a VM in the cloud(TM) to run this code for 2 days.
 
 ### Cleaning up the raw data
 
-Cool. We got more than 2 million tweets which were around 200MB.
+Cool. We got more than 2 million tweets which were around 200MB!! 🎉
 
 First of all, we cleaned the data doing the following in `preprocessing.py`:
 * removing mentions
@@ -82,8 +81,7 @@ of 40% with a decision tree.
 
 Even thought that our professor liked the result, I was expecting a higher accuracy tbqh.
 
-
-Machine learning and natural language processing are hard, but they are loads of fun! 😄 
+Machine learning and natural language processing are hard, but now they look like being loads of fun to me! 😄 
 
 ### Notes & links
 
