@@ -57,7 +57,7 @@ Hope you enjoyed it! :)
 ### Notes & links
 * [`ptrace` man pages](http://man7.org/linux/man-pages/man2/ptrace.2.html)
 * [Julia Evan's wonderful zines](http://jvns.ca/zines/)
-* [Filippo Valsorda's Linux sycall table](https://filippo.io/linux-syscall-table/)
+* [Filippo Valsorda's Linux syscall table](https://filippo.io/linux-syscall-table/)
 * [strace source code](https://github.com/bnoordhuis/strace)
 * [GDB project page](https://www.sourceware.org/gdb/)
 * [the code of this post](https://github.com/javierhonduco/write-a-strace-and-gdb)
