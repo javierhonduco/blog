@@ -6,12 +6,12 @@ author: Javier Honduvilla Coto
 categories: emojis python scikit-learn machine-learning text-mining
 ---
 
-(**TL;DR**: For a university course I've built a classifier that returns an emoji (that should make sense 😝) given some input text: [https://github.com/javierhonduco/emoji-prediction](https://github.com/javierhonduco/emoji-prediction))
+(**TL;DR**: For a university course I've built a classifier that returns an emoji –that should make sense 😝 – given some input text: [https://github.com/javierhonduco/emoji-prediction](https://github.com/javierhonduco/emoji-prediction))
 
 
 As the final project of a course on artificial intelligence applications I'm taking at my university we were given total freedom to develop whatever we wanted.
 
-After some days thinking about what could I propose to my team, I thought on **emojis**. I really 💞 emojis. They are an awesome way to express oneself in a very nice way.
+After some days thinking about what could I propose to my team, I thought on **emojis**. I really 💞  emojis. They are an awesome way to express oneself in a very nice way.
 
 So... what if we build a text classifier in which, given a text in English you would get an emoji that suits? 😁
 
@@ -28,7 +28,7 @@ We tried developing a prototype which can be found in `fetcher/benchmark.py` tha
 Once we saw that we were able to download around 9 tweets/s we started refactoring the code and making it more reliable as there are some exceptions – mainly networking ones – that can be raised from the twitter library we were using, twython.
 We also split the network and the I/O part in order to be a bit faster. For that purpose, we used two threads, one for each task. We used Python's stdlib thread-safe queue as well so both threads could communicate.
 
-With that approach, we achieved a slightly higher download rate at around 14tweets/s (yeah, it's _quite possible_ that disk IO on that laptop is plain horrible 😂).
+With that approach, we achieved a slightly higher download rate at around 14tweets/s (yeah, it's _quite possible_ that disk IO on that laptop is plain horrible 😂 ).
 
 We then set up a VM in the cloud(TM) to run this code for 2 days.
 
@@ -69,7 +69,8 @@ With the reported accuracy and the timing, we can get a nice idea of how the dif
 
 ### Results & conclusion
 
-With 10.000 tweets – 8k used for training and the rest for test – and about 120 emojis we got these results.
+With 10.000 tweets – 8k used for training and the rest for test – and about 120 emojis we got these results:
+
 
 |       Classifier        | Accuracy in test  | Training time           |
 |:-----------------------:|:-----------------:|:-----------------------:|
@@ -92,7 +93,7 @@ Machine learning and natural language processing are hard, but now they look lik
 
 ### Notes & links
 
-* Don't take this too seriously. I'm not a machine learning expert and probably you can do it in a more efficient, better, more awesome way! Feel free to tell me what could be improved :)
+* Don't take this too seriously. I'm not a machine learning expert and probably you can do it in a more efficient, better, more awesome way! Feel free to tell me what could be improved 😁.
 * We would have loved trying other techniques such as CNN (Convolutional Neural Networks) as well as other classifiers, but we were too time constrained :sadpanda:.
 * Remember that having balanced classes is really important! We maybe noticed a bit late 😓. Too many "😂"s!
 * Many tweets have multiples emojis, however we just picked the first one for simplicity's sake.
