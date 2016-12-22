@@ -2,7 +2,7 @@
   display: none;
 }
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   width: 500px;
   margin: 30px auto 60px auto;
   padding: 0px;
@@ -92,6 +92,7 @@ section.writings time {
   font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .blogpost table {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.23);
   width: 90%;
   margin-left: auto;
