@@ -57,6 +57,7 @@ section.writings time {
   padding-left: 0.8em;
   font-size: 11px;
   color: rgba(0, 0, 0, 0.57);
+  line-height: 10px;
 }
 @media all and (max-width: 499px) {
   body, canvas {
@@ -67,18 +68,28 @@ section.writings time {
 .blog-header h2 {
   margin-top: 50px;
 }
+.post-meta {
+  opacity: 0.75;
+}
 .blog-meta time::before {
   content: ' • ';
 }
-.blogpost {
-  font-size: 15px;
+.page-content {
+  font-family: Lora, Georgia, Baskerville, serif;
+  font-size: 17px;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
-  line-height: 1.6em;
+  line-height: 1.3em;
   margin-top: 40px;
 }
 .blogpost h3 {
   margin-top: 50px;
+}
+.blogpost {
+  line-height: 1.6em;
+}
+.page-content h1, h2, h3, h4 {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
 }
 .blogpost table {
   border: 1px solid rgba(0, 0, 0, 0.23);
@@ -100,4 +111,7 @@ section.writings time {
   position: fixed;
   top: 0px;
   width: 500px;
+}
+code {
+  background-color: rgba(0, 0, 0, 0.07);
 }
