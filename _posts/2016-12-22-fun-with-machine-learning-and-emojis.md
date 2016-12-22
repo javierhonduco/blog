@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Fun with machine learning and emojis
-date:   2016-12-20 8:23:20 +0100
+date:   2016-12-22 8:23:20 +0100
 author: Javier Honduvilla Coto
 categories: emojis python scikit-learn machine-learning text-mining
 ---
