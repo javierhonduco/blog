@@ -38,6 +38,7 @@ We then set up a VM in the cloud(TM) to run this code for 2 days.
 Cool. We got more than 2 million tweets which were around 200MB!! 🎉
 
 First of all, we cleaned the data doing the following in `preprocessing.py`:
+
 * removing mentions
 * removing the `#` in hashtags, as the content may be interesting
 * removing "RT"s from manual retweets
@@ -84,8 +85,9 @@ With 10.000 tweets – 8k used for training and the rest for test – and about 
 As we can see, our best classifier was the decision tree with an accuracy around 40%!
 
 As we wanted to manually test the trained models with some other inputs we created the `predict` function, which receives 3 arguments:
+
 1. The input text to be classified
-2. The vectorized you used during training
+2. The vectorizer you used during training
 3. The trained classifier
 
 Even thought that our professor liked the result, I was expecting a higher accuracy.
