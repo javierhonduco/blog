@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.3.3
+install: bundle install
+script: bin/cibuild
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+sudo: false
