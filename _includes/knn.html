@@ -1,17 +1,19 @@
 <script type="application/javascript">
-/*
-   pseudo-art? generator AKA naïve KNN implementation
-   no quadtree, no d3, and no coolness ¯\_(ツ)_/¯
- */
+  /*
+    pseudo-art? generator AKA naïve KNN implementation
+    no quadtree, no D3.js, and no coolness ¯\_(ツ)_/¯
+  */
   (function() {
     'use strict';
-    var WIDTH = 500;
-    var HEIGHT = 75;
-    var VERTICES = 40;
-    var K = 5;
 
-    var canvas = document.querySelector('#canvas');
-    var ctx = canvas.getContext('2d');
+    var WIDTH = 500,
+      HEIGHT = 75,
+      VERTICES = 40,
+      K = 5,
+      POINT_RADIUS = 3;
+
+    var canvas = document.querySelector('#canvas'),
+      ctx = canvas.getContext('2d');
 
     var random_points = function(VERTICES) {
       var points = [];
@@ -23,13 +25,15 @@
       }
       return points;
     }
+
     var draw_vertices = function(ctx, points) {
       for(var i=0; i<points.length; i++) {
         ctx.beginPath();
-        ctx.ellipse(points[i][0], points[i][1], 3, 3, 45 * Math.PI/180, 0, 2 * Math.PI);
+        ctx.ellipse(points[i][0], points[i][1], POINT_RADIUS, POINT_RADIUS, 45 * Math.PI/180, 0, 2 * Math.PI);
         ctx.stroke();
       }
     }
+
     var draw_knn = function(ctx, points, K) {
       for(var i=0; i<points.length; i++) {
         var distances = [];
@@ -56,12 +60,14 @@
         }
       }
     }
+
     var before = window.performance.now();
     var points = random_points(VERTICES);
     draw_vertices(ctx, points);
     draw_knn(ctx, points, K);
     var elapsed_time = window.performance.now()-before;
-    //console.log(`_K means#0 took_: ${elapsed_time}`)
+    console.log(`[info] _K means#0 took_: ${elapsed_time}`)
+
     /*
       // Experiments CPU hogging animations
       var animate = function(){
