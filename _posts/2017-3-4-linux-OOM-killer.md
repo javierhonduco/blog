@@ -34,9 +34,9 @@ Then, the base points are computed with this [formula](https://github.com/torval
 
 If the process is a privileged one, [its score is decreased](https://github.com/torvalds/linux/blob/master/mm/oom_kill.c#L210-L211).
 
-Then, the amount of points is added with `oom_score_adj`, which is a user defined variable used to tune the score the process will have.
+Then, the amount of points is added with `oom_score_adj` (which is normalised), which is a user defined variable used to tune the score the process will have.
 
-Lastly, the points are normalised before returning them.
+Lastly, the points are returned.
 
 
 ### In conclusion
