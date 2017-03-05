@@ -34,6 +34,8 @@ Then, the base points are computed with this [formula](https://github.com/torval
 
 If the process is a privileged one, [its score is decreased](https://github.com/torvalds/linux/blob/master/mm/oom_kill.c#L210-L211).
 
+Then, the amount of points is added with `oom_score_adj`, which is a user defined variable used to tune the score the process will have.
+
 Lastly, the points are normalised before returning them.
 
 
@@ -44,4 +46,7 @@ In low memory situations, Linux tries to kill processes that are consuming lots 
 As usually, I'm not an expert at all in the subject. I was just really curious how this works in reality :). Shall you find some error, feel free to let me know!
 
 
- [1] Unkillable tasks are processes running as kernel threads, such as the init process.
+* [1] Unkillable tasks are processes running as kernel threads, such as the init process.
+* [`oom_score_adj` section in the `proc` manpage](http://man7.org/linux/man-pages/man5/proc.5.html)
+
+EDIT: `oom_score_adj` comment and link to the proc manpages added.
