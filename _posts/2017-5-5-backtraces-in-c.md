@@ -26,7 +26,7 @@ What I wanted to do was roughly:
 First of all, we need to register the segfault handler with something like:
 ```c
   struct sigaction sig;
-  sig.sa_sigaction = sigfault_handler;
+  sig.sa_sigaction = segfault_handler;
   sig.sa_flags = SA_SIGINFO;
 
   if(sigaction(SIGSEGV, &sig, NULL) < 0) {
@@ -36,7 +36,7 @@ First of all, we need to register the segfault handler with something like:
 ```
 and the function that I, boringly called, `segfault_handler`:
 ```c
-  void sigfault_handler(int signal, siginfo_t* siginfo, void* context) {
+  void segfault_handler(int signal, siginfo_t* siginfo, void* context) {
   // to be implemented
   }
 ```
@@ -112,10 +112,39 @@ __attribute__((constructor))
 
 and once we compile it as a shared library, we can tell the linker to set it up while running some other program with [`LD_PRELOAD`](https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/).
 
+### Conclusions
+So, after we compile this code as a static shared library called segfault and the code that can fail being "experiment", we can do:
+```bash
+$  LD_PRELOAD=./segfault.so ./experiment
+```
+
+and the output would be something like:
+
+```
+========== The program crashed =========
+==> context
+0x4004b6
+/home/javierhonduco/c-nice-sigsev/experiment.c:3
+
+==> offending sigsev line
+*faulty = 314;
+==> stacktrace
+./segfault.so(print_stacktrace+0x86) [0x7f8e2e286bb6]
+./segfault.so(sigfault_handler+0x183) [0x7f8e2e286d9b]
+/usr/lib/libc.so.6(+0x330b0) [0x7f8e2df1b0b0]
+./experiment() [0x4004b6]
+/usr/lib/libc.so.6(__libc_start_main+0xf1) [0x7f8e2df08291]
+./experiment() [0x4003da]
+========================================
+```
+
 This post got longer than expected! :o
 
 I've learnt many stuff that I did't know about before, so it's been pretty cool to do this :)
 
+The code can be found here
 ### Notes
 * For some reason, while compiling this on OSX (which has a different `u_context_` struct) I had to disable address space randomization passing the `-nopie` to the linker, which I didn't have to do in Linux. I don't know why in Linux that's not necessary, don't know if `gcc` by default disables it when the debugging symbols flag is passed or it's something else.
-
+* There are some functions that are not signal safe – which is pretty interesting –, and `puts` is among them. We could use `write(stdout, "<>");` instead, but I've decided to keep it like this for simplicity.
+* This could be extended to catch more signals such as `sigill` as well :)
+* This is probably broken in many ways
