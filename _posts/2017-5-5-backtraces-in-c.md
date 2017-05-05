@@ -142,7 +142,8 @@ This post got longer than expected! :o
 
 I've learnt many stuff that I did't know about before, so it's been pretty cool to do this :)
 
-The code can be found here
+The complete code can be found [here](https://github.com/javierhonduco/wheres-my-segfault).
+
 ### Notes
 * For some reason, while compiling this on OSX (which has a different `u_context_` struct) I had to disable address space randomization passing the `-nopie` to the linker, which I didn't have to do in Linux. I don't know why in Linux that's not necessary, don't know if `gcc` by default disables it when the debugging symbols flag is passed or it's something else.
 * There are some functions that are not signal safe – which is pretty interesting –, and `puts` is among them. We could use `write(stdout, "<>");` instead, but I've decided to keep it like this for simplicity.
