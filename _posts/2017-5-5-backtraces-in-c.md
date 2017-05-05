@@ -44,7 +44,7 @@ and the function that I, boringly called, `segfault_handler`:
 I just wanted to try if that worked, so, inside the `main` function, just after the signal handler registration, I triggered a segmentation fault with a `NULL` dereferencing:
 ```c
 int *faulty = 0;
-faulty = 314;
+*faulty = 314;
 ```
 
 I compiled and run it but the program didn't stop! It seemed to be stuck in an infinite loop, but I had no clue of what was happening, so I turned to our friend `strace` (which if you haven't heard before you should check out [this blog posts](https://jvns.ca/categories/strace/) by Julia Evans!) and I saw that the program was receiving lots of segmentation faults instead of just one!
