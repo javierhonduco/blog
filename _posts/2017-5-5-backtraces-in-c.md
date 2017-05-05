@@ -124,9 +124,9 @@ and the output would be something like:
 ========== The program crashed =========
 ==> context
 0x4004b6
-/home/javierhonduco/c-nice-sigsev/experiment.c:3
+/home/javierhonduco/c-nice-sigsegv/experiment.c:3
 
-==> offending sigsev line
+==> offending sigsegv line
 *faulty = 314;
 ==> stacktrace
 ./segfault.so(print_stacktrace+0x86) [0x7f8e2e286bb6]
