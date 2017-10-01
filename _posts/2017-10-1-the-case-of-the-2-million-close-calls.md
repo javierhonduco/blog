@@ -11,7 +11,7 @@ This summer, while working on my internship project, I realised that an internal
 ### First debugging attempts
 Being a bit clueless about this, I tried running `strace` with the `-fc` flags (so children processes would be also tracked and it would display a very nice summary of the syscalls instead of per syscall information) on it. The result was a bit surprising, as there were almost *2 million* calls to `close` which were accounting for around 80% of the total runtime. What is more, more than 90% of them had failed. Interesting!
 
-I run `strace` on the process again, but this time without the `-c` option, as I didn't want a summary, but each individual system call.
+I ran `strace` on the process again, but this time without the `-c` option, as I didn't want a summary, but each individual system call.
 
 A funny pattern starting appearing by the mid of the output: most of the failed `close` calls were one after another and they were attempting to close incremental file descriptors :o
 
@@ -51,5 +51,5 @@ I should have probably posted about this issue before as well as better explaini
 * [3] [https://stackoverflow.com/questions/899038/getting-the-highest-allocated-file-descriptor/918469#918469](https://stackoverflow.com/questions/899038/getting-the-highest-allocated-file-descriptor/918469#918469)
 
 ### Notes
-* It's fun to see how this is implemented, such as in [cPython](https://github.com/python/cpython/blob/163468a766e16604bdea04a1ab808c0d3e729e5d/Modules/_posixsubprocess.c#L216) or in [Facebook's folly library](https://github.com/facebook/folly/blob/4af3040b4c2192818a413bad35f7a6cc5846ed0b/folly/Subprocess.cpp#L484-L490)
+* It's fun to see how this is implemented, such as in [CPython](https://github.com/python/cpython/blob/163468a766e16604bdea04a1ab808c0d3e729e5d/Modules/_posixsubprocess.c#L216) or in [Facebook's folly library](https://github.com/facebook/folly/blob/4af3040b4c2192818a413bad35f7a6cc5846ed0b/folly/Subprocess.cpp#L484-L490)
 
