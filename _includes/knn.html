@@ -15,6 +15,12 @@
     var canvas = document.querySelector('#canvas'),
       ctx = canvas.getContext('2d');
 
+    canvas.width = WIDTH * 4;
+    canvas.height = HEIGHT * 4;
+    canvas.style.width = "500px";
+    canvas.style.height = "75px";
+    ctx.scale(4, 4);
+
     var random_points = function(VERTICES) {
       var points = [];
       for(var i=0; i<VERTICES; i++) {
