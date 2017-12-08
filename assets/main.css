@@ -8,7 +8,7 @@ body {
   padding: 0px;
 }
 mark {
-  background-color: rgb(187, 226, 255);
+  background-color: #ffff0040;
 }
 a, a:visited {
   color: black;
