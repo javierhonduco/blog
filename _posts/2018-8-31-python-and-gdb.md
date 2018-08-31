@@ -21,7 +21,7 @@ sudo gdb \
   -p $pid \
   -ex 'call (int)PyGILState_Ensure()' \
   -ex 'call (int)PyRun_SimpleString("import gc; open('\''/tmp/unreclaimable_garbage'\'', '\''w+'\'').write(str(gc.garbage))")'  \
-  -ex 'call (int)PyGILState_Release()' \
+  -ex 'call (int)PyGILState_Release($1)' \
   -ex 'set confirm off' \
   -ex quit
 ```
@@ -33,7 +33,7 @@ sudo gdb \
   -p $pid \
   -ex 'call (int)PyGILState_Ensure()' \
   -ex 'call (int)PyRun_SimpleString("import traceback; traceback.print_stack(file=open('\''/tmp/stacktrace'\'', '\''w+'\''))")'  \
-  -ex 'call (int)PyGILState_Release()' \
+  -ex 'call (int)PyGILState_Release($1)' \
   -ex 'set confirm off' \
   -ex quit
 ```
