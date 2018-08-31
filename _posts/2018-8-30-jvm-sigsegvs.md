@@ -44,7 +44,7 @@ However, it was not a couple of segfaults, it was more like hundreds when invoki
 
 [Chris Down](https://chrisdown.name/) helped me double check that the `trace.py` one-liner[1] made sense. We checked the kernel stacktraces and many of them were pointing to `__bad_area_nosemaphore`.
 
-Gave another go at debugging this in the evening with Javier Maestro who thought this could be an implementation detail of the Java Virtual Machine. I thought that was completely improbable, but after some more digging into HotSpot's code and [running a Hello World in Java under GDB and seeing that it was receiving a SIGSEGV](https://gist.github.com/javierhonduco/cdaf167fe29ca3c5ada72dea3db7478e), we learnt that it is the way it's supposed to behave (!!!).
+Gave another go at debugging this in the evening with [Javier Maestro](https://www.linkedin.com/in/jjmaestro) who thought this could be an implementation detail of the Java Virtual Machine. I thought that was completely improbable, but after some more digging into HotSpot's code and [running a Hello World in Java under GDB and seeing that it was receiving a SIGSEGV](https://gist.github.com/javierhonduco/cdaf167fe29ca3c5ada72dea3db7478e), we learnt that it is the way it's supposed to behave (!!!).
 
 Some of the possible cases are:
 - The JVM eliminates NULL checks and on SIGSEGV will replace them with the code that has the checks
