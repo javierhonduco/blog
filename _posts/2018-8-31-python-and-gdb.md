@@ -14,7 +14,7 @@ So far I've used it for two purposes:
 
 Thanks to Bruno Penteado I learnt that objects with destructors that were part of cyclic references were never garbage collected in CPython 2.
 
-Given that many people still runs Python2 code in production, I thought it could be interesting to count how many objects and which are they are leaked because of this behaviour.
+Given that many people still runs Python2 code in production, I thought it could be interesting to see which objects are leaked because of this behaviour.
 
 ```shell
 sudo gdb \
@@ -45,6 +45,6 @@ This is potentially dangerous, don't run it in production unless you are ok with
 ### Conclusion
 In lost objects, despite not providing you with any other important information such as the total size of the leak due to this implementation detail, or the cycle reference creation "callsite", I think it could be interesting to see if this type of leak happens. Another good reason to upgrade to Python3!!! :D
 
-Check out [pyrasite](https://github.com/lmacken/pyrasite) which also uses this technique to enable really cool things :)
+Check out [pyrasite](https://github.com/lmacken/pyrasite) also uses this technique to enable really cool things :)
 
 Hope this is somewhat useful!! Please send me your feedback, ideas, and sleuths.
