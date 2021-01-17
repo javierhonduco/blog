@@ -37,7 +37,7 @@ section ul li {
   text-indent: -.7em;
 }
 section ul li:before {
-  content: "• ";
+  content: "- ";
   color: rgb(128, 128, 128);
 }
 section.contact a:after {
@@ -75,7 +75,6 @@ section.writings time {
   content: ' • ';
 }
 .page-content {
-  font-family: Lora, Georgia, Baskerville, serif;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   word-wrap: break-word;
