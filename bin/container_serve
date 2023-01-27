@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+podman build --tag le-blog -f ./Containerfile
+podman run -it -v $PWD:/www -p 4000:4000 localhost/le-blog:latest bin/serve
