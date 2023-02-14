@@ -9,8 +9,7 @@ RUN apt-get update -y --no-install-recommends && \
 	git \
 	ruby-dev
 
-ADD Gemfile Gemfile.lock ./
-RUN gem install bundler && \
-	bundle install
+ADD Gemfile Gemfile.lock .
+RUN gem install bundler && bundle install
 
 WORKDIR /www

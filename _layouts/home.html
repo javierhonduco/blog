@@ -3,37 +3,34 @@ layout: default
 ---
 
 <header>
-  <canvas id="canvas" class="" width="500" height="75"></canvas>
+  <canvas id="canvas"></canvas>
 </header>
 <section class="header">
   <h2>Hi! 👋</h2>
   <div class="content">
-    <span class="name waid">I'm Javier Honduvilla Coto, a Software Engineer from Madrid living in London.
-        <span id="interests">I 💞 travelling, nice people, learning about computers, emojis, travelling, and guacamole.</span>
+    <span>I'm Javier Honduvilla Coto, a Software Engineer from Madrid living in London.
+        <span></span>I enjoy learning about computers, travelling, using too many emojis, and cooking.</span>
+        <span>You can find me on
+            <a href="https://hachyderm.io/@javierhc">Mastodon</a>,
+            <a href="https://linkedin.com/in/javierhonduco">LinkedIn</a>,
+            <a href="https://github.com/javierhonduco">GitHub</a>,
+            <a href="https://speakerdeck.com/javierhonduco">Speakerdeck</a>.
+        </span>
     </span>
   </div>
 </section>
-<section class="contact">
-  <h2>Follow me on</h2>
-  <div class="content">
-    <div class="links">
-      <a href="https://twitter.com/javierhonduco">Twitter</a>
-      <a href="https://github.com/javierhonduco">GitHub</a>
-      <a href="https://instagram.com/javierhonduco">Instagram</a>
-      <a href="https://speakerdeck.com/javierhonduco">Speakerdeck</a>
-      <a href="https://linkedin.com/in/javierhonduco">LinkedIn</a>
-    </div>
-    <span>(My handle is <i>javierhonduco</i> in most places)</span>
-  </div>
-</section>
-{% if site.posts.size > 0 %}
-  <section class="writings">
-    <h2>Writings</h2>
 
-    <ul>
+{% if site.posts.size > 0 %}
+  <section class="posts">
+    <h2>Posts</h2>
+
+    <ul class="post-list">
       {% for post in site.posts %}
-        <li>
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        <li class="post-item">
+          <time datetime="{{ post.date }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+          <span>
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </span>
         </li>
       {% endfor %}
     </ul>
