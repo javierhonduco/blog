@@ -1,12 +1,8 @@
 <script type="application/javascript">
-  /*
-    pseudo-art? generator AKA naïve KNN implementation
-    no quadtree, no D3.js, and no coolness ¯\_(ツ)_/¯
-  */
   (function() {
     'use strict';
 
-    var WIDTH = 500,
+    var WIDTH = document.body.clientWidth - 50,
       HEIGHT = 75,
       VERTICES = 40,
       K = 5,
@@ -17,8 +13,8 @@
 
     canvas.width = WIDTH * 4;
     canvas.height = HEIGHT * 4;
-    canvas.style.width = "500px";
-    canvas.style.height = "75px";
+    canvas.style.width = `${WIDTH}px`;
+    canvas.style.height = `${HEIGHT}px`;
     ctx.scale(4, 4);
 
     var random_points = function(VERTICES) {
