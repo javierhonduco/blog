@@ -42,10 +42,14 @@ section {
 section.posts time {
   font-family: 'Fira Mono', monospace;
   display: block;
-  padding-top: 15px;
+  padding-top: 12px;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.57);
   line-height: 10px;
+}
+
+.blog-meta author::after {
+  content: " – ";
 }
 
 section.posts time {
