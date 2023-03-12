@@ -29,7 +29,7 @@ Seems easy enough. I tested it and everything seemed working correctly. As soon 
 
 After inspecting the standard library code, two things stood out. First, there might be some overhead because we are passing a struct rather than basic types and that is done with [a runtime check](https://cs.opensource.google/go/go/+/refs/tags/go1.20.2:src/encoding/binary/binary.go;l=342), but even if that's cheap, [the fast path always allocates](https://cs.opensource.google/go/go/+/refs/tags/go1.20.2:src/encoding/binary/binary.go;l=341) despite having a buffer ready.
 
-I decided to first ship the buffer writes field by field, rather than the whole struct to see the performance gains that would have, and has expected, it was minimal compared to the allocations. Given that we perform many writes to this buffer, these allocations quickly add up.
+I decided to first ship the buffer writes field by field, rather than the whole struct to see the performance gains that would have, and as expected, it was minimal compared to the allocations. Given that we perform many writes to this buffer, these allocations quickly add up.
 
 Were these memory allocations expected? Definitely not by me, but this would not have been the case had I read [the package's documentation](https://pkg.go.dev/encoding/binary):
 
@@ -40,7 +40,7 @@ We can't use gob or protobuf here though, we are interoperating with C... Though
 ## A more efficient approach
 
 
-I wanted to minimising the overhead when writing the different fields of the structs that make this array. Not only lots of allocations are made when writing data we want to pass to the kernel, but also when wanted to zero the buffer to reuse it.
+I wanted to minimise the overhead when writing the different fields of the structs that make this array. Not only lots of allocations are made when writing data we want to pass to the kernel, but also when we zero the buffer to reuse it.
 
 A possibility is to use `binary` helper methods such as `binary.LittleEndian.PutUint64` that don't allocate. The main difference is that they receive a slice rather than a buffer. The first iteration manually sliced every field and wrote to them but this isn't very maintainable, so decided to abstract it in a newly created type creatively named... `EfficientBuffer`!
 
