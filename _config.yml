@@ -6,6 +6,12 @@ canonical_url: "https://hondu.co"
 
 gosquared_token: 'GSN-583350-L'
 permalink: /blog/:title
+base_photos_url: 'https://pub-7863e99ef125486f85bcaf2134fce42a.r2.dev'
+
+collections:
+  photos:
+    output: true
+
 markdown: kramdown
 kramdown:
   input: GFM

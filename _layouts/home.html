@@ -37,4 +37,21 @@ layout: default
   </section>
 {% endif %}
 
+{% if site.data.photos.size > 0 %}
+  <section class="photos">
+    <a href="/photos" class="no-visit-style">
+      <h2>Photos</h2>
+      <div class="photo-item">
+      {% for photo in site.data.photos limit:4 %}
+        <picture>
+            <source srcset="{{ site.base_photos_url }}/{{ photo.sha256_hash }}_webp_640 640w" type="image/webp">
+            <source srcset="{{ site.base_photos_url }}/{{ photo.sha256_hash }}_jpg_640 640w">
+            <img style="width: 200px" loading="lazy" src="{{ site.base_photos_url }}v/{{ photo.sha256_hash }}_jpg_1280">
+        </picture>
+      {% endfor %}
+      </div>
+    </a>
+  </section>
+{% endif %}
+
 {% include knn.html %}
