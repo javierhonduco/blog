@@ -42,7 +42,8 @@ layout: default
     <a href="/photos" class="no-visit-style">
       <h2>Photos</h2>
       <div class="photo-item">
-      {% for photo in site.data.photos limit:4 %}
+      {% assign photos = site.data.photos | sample: 4 %}
+      {% for photo in photos %}
         <picture>
             <source srcset="{{ site.base_photos_url }}/{{ photo.sha256_hash }}_webp_640 640w" type="image/webp">
             <source srcset="{{ site.base_photos_url }}/{{ photo.sha256_hash }}_jpg_640 640w">

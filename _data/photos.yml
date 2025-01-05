@@ -1,30 +1,30 @@
 ---
-- description: ''
-  location: ''
+- description: 'Churrería en Príncipe Pío'
+  location: 'Madrid'
   original_url: ''
   original_name: DSCF6422.JPG
   date: 2022:12:25 21:48:40
-  tags: ''
+  tags: 'Madrid'
   name: ''
   sha256_hash: b197d14a7c5039a90bdf45fe873d47f4bbb9af28e1ed857541fd96b526cb1f04
-- description: ''
-  location: ''
+- description: 'Puente de Segovia'
+  location: 'Madrid'
   original_url: ''
   original_name: DSCF6426.JPG
   date: 2022:12:25 22:14:56
   tags: ''
   name: ''
   sha256_hash: 53304d9ec13026ea366022893352c36fa9f2759ece0f2468a06efc04b7651dd6
-- description: ''
-  location: ''
+- description: 'Ipa en la Bola del Mundo'
+  location: 'Bola del Mundo'
   original_url: ''
   original_name: DSCF6440.JPG
   date: 2022:12:30 12:52:34
   tags: ''
   name: ''
   sha256_hash: 9ffec385436adb6165e302b5f87262421a7eb572c348a575649cfd166e010119
-- description: ''
-  location: ''
+- description: 'New developments'
+  location: 'River Lea'
   original_url: ''
   original_name: DSCF6727.JPG
   date: 2023:09:08 10:25:42
@@ -47,8 +47,8 @@
   tags: ''
   name: ''
   sha256_hash: e533d2e8fd13145732adf19af0ff10f0975d447a187fe8df6d09eb2591311530
-- description: ''
-  location: ''
+- description: 'Foggy delivery'
+  location: 'Tottenham marshes'
   original_url: ''
   original_name: DSCF6751.JPG
   date: 2023:09:08 10:43:24
@@ -63,24 +63,8 @@
   tags: ''
   name: ''
   sha256_hash: 12fb037e5bcab9e92270c7de99231ebda33d49f44cfd1bfe4157c5f4eb928eeb
-- description: ''
-  location: ''
-  original_url: ''
-  original_name: DSCF6758.JPG
-  date: 2023:09:08 11:00:21
-  tags: ''
-  name: ''
-  sha256_hash: 3d77b358d9fcdd4389b6dbc0c9fda1e01a633ed2c81e215c9e216629ee2058d7
-- description: ''
-  location: ''
-  original_url: ''
-  original_name: DSCF6766.JPG
-  date: 2023:09:08 11:03:08
-  tags: ''
-  name: ''
-  sha256_hash: ce56ade80865b72e7833152b0b6a5d9178912ce75c8435b0922ea6680d68b385
-- description: ''
-  location: ''
+- description: 'Multitasking'
+  location: 'River Lea'
   original_url: ''
   original_name: DSCF6768.JPG
   date: 2023:09:08 11:03:20
@@ -95,11 +79,139 @@
   tags: ''
   name: ''
   sha256_hash: 353e9aa342c814391e116243f5c0fb64d101fe4202b2034ef719c9d03e10c919
-- description: ''
-  location: ''
+- description: 'Looking for breakfast'
+  location: 'River Lea'
   original_url: ''
   original_name: DSCF6771.JPG
   date: 2023:09:08 11:15:25
   tags: ''
   name: ''
   sha256_hash: 3e60763c904312bd907d4168d039246a391e657387c72afa8ad3a7f703e261db
+- description: ''
+  location: 'Lisbon'
+  original_url: ''
+  original_name: DSCF6244.JPG
+  date: 2022:09:18 21:05:51
+  tags: ''
+  name: ''
+  sha256_hash: d720908f6a323e9a7526578c593e3d665cda539a9ebd1145d5d0997279370f1e
+- description: ''
+  location: 'Lisbon'
+  original_url: ''
+  original_name: DSCF6249.JPG
+  date: 2022:09:18 21:53:23
+  tags: ''
+  name: ''
+  sha256_hash: 3045a46bdb6abe80a44811e61ce6510e761fa34ec5a53d53e714c8866866a8b5
+- description: ''
+  location: 'Lisbon'
+  original_url: ''
+  original_name: DSCF6252.JPG
+  date: 2022:09:18 21:55:01
+  tags: ''
+  name: ''
+  sha256_hash: 650aeaf6b065d8df35e2d5bcafa72856b7b9bf6bc0e5b6e4da2b96492facca87
+- description: ''
+  location: 'Lisbon'
+  original_url: ''
+  original_name: DSCF6254.JPG
+  date: 2022:09:18 21:59:04
+  tags: ''
+  name: ''
+  sha256_hash: 0630c81210e44a40fbc797fc2f9fe926f4202039d7359b5147fe47b7ed2a11d6
+- description: ''
+  location: 'Lisbon'
+  original_url: ''
+  original_name: DSCF6259.JPG
+  date: 2022:09:19 00:04:14
+  tags: ''
+  name: ''
+  sha256_hash: 254756dba9c5384f7c750167049c9e5312c9593656e92029fa63acfb9377e5ab
+- description: 'Lake Zurich'
+  location: 'Zurich'
+  original_url: ''
+  original_name: DSCF6285.JPG
+  date: 2022:11:10 19:46:03
+  tags: ''
+  name: ''
+  sha256_hash: c45728b49bb8b3bbf0a3dacc596bc3ee36cd8defe3bf9fb2d3c67cce3539a23d
+- description: ''
+  location: 'Madrid'
+  original_url: ''
+  original_name: DSCF6371.JPG
+  date: 2022:12:25 21:16:33
+  tags: ''
+  name: ''
+  sha256_hash: 213f56a9fc5f1dc92ca744a9edfa45bd7d647479b12c539dd7439a121fe606ed
+- description: ''
+  location: 'Whitstable'
+  original_url: ''
+  original_name: DSCF6490.JPG
+  date: 2023:03:11 16:09:54
+  tags: ''
+  name: ''
+  sha256_hash: d034bd31a3e2f1f93ddec5020a039ee79ac19b24d00f59d823f6ef66ed89914f
+- description: ''
+  location: 'Whitstable'
+  original_url: ''
+  original_name: DSCF6497.JPG
+  date: 2023:03:11 16:19:32
+  tags: ''
+  name: ''
+  sha256_hash: 133072a29f771c3a488f23f97f79aad0041cdb4d2d0774054d18a3e4bb2b9911
+- description: ''
+  location: 'Berlin'
+  original_url: ''
+  original_name: DSCF6539.JPG
+  date: 2023:04:09 16:33:12
+  tags: ''
+  name: ''
+  sha256_hash: 1d017a4cdbe7bcb49760b2febb5744754d846332ef8408235475de8e852716cc
+- description: ''
+  location: 'Berlin'
+  original_url: ''
+  original_name: DSCF6541.JPG
+  date: 2023:04:09 17:14:36
+  tags: ''
+  name: ''
+  sha256_hash: a5a959e480613ef3bf7b493a41150b9b1aa4fec3405048f367935226f15ddd85
+- description: ''
+  location: 'London'
+  original_url: ''
+  original_name: DSCF6564.JPG
+  date: 2023:05:13 16:52:13
+  tags: ''
+  name: ''
+  sha256_hash: a3a5e5e66c826ce1ac1bd57b01bf50f65b670445ff22f4262106fb054ab0df46
+- description: ''
+  location: 'Vejle, Denmark'
+  original_url: ''
+  original_name: DSCF6572.JPG
+  date: 2023:05:19 15:29:56
+  tags: ''
+  name: ''
+  sha256_hash: df2f58925250374149f7aadcf328f6658f5750b42578189e30239afee58c47b4
+- description: 'The Wave'
+  location: 'Vejle, Denmark'
+  original_url: ''
+  original_name: DSCF6586.JPG
+  date: 2023:05:19 18:37:38
+  tags: ''
+  name: ''
+  sha256_hash: aeec867aa15e803f63f3c5fc6c280ce0a288ca26ea4c1ca4364017042de5a402
+- description: 'Cannon Street bridge'
+  location: 'London'
+  original_url: ''
+  original_name: DSCF6652.JPG
+  date: 2023:08:04 17:21:33
+  tags: ''
+  name: ''
+  sha256_hash: 9776c995926da30ad1b8d895e8669aed9f625c23d98bf7aa74cdd043fe001289
+- description: 'Skateboard Graveyard'
+  location: 'London'
+  original_url: ''
+  original_name: DSCF6654.JPG
+  date: 2023:08:04 18:36:34
+  tags: ''
+  name: ''
+  sha256_hash: e66ad605bc954b89423a8356db592ddaf6b7854a3691109cb0b1c301dec0151b

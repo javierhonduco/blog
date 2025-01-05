@@ -4,3 +4,4 @@ _site
 vendor/
 .envrc
 .DS_store
+images/photos/

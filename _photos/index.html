@@ -9,7 +9,8 @@ layout: default
 </nav>
 
 <div class="pic-list">
-    {% for photo in site.data.photos %}
+    {% assign photos = site.data.photos | sort: 'date' | reverse %}
+    {% for photo in photos %}
     <section>
         <picture>
             <source srcset="{{ site.base_photos_url }}/{{ photo.sha256_hash }}_webp_640 640w, {{ site.base_photos_url }}/{{ photo.sha256_hash }}_webp_1280 1280w" type="image/webp">
