@@ -1,0 +1,107 @@
+// SPDX-License-Identifier: (LGPL-2.1 OR BSD-2-Clause)
+
+//! An example illustrating how to trace run queue latency using BPF.
+
+use std::mem::MaybeUninit;
+use std::str;
+use std::time::Duration;
+
+use anyhow::Result;
+use clap::Parser;
+use libbpf_rs::RingBufferBuilder;
+use libbpf_rs::skel::OpenSkel;
+use libbpf_rs::skel::Skel;
+use libbpf_rs::skel::SkelBuilder;
+use plain::Plain;
+use time::OffsetDateTime;
+use time::macros::format_description;
+
+mod runqslower {
+    include!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/src/bpf/runqslower.skel.rs"
+    ));
+}
+
+#[allow(clippy::wildcard_imports)]
+use runqslower::*;
+
+/// Trace high run queue latency
+#[derive(Debug, Parser)]
+struct Command {
+    /// Trace latency higher than this value
+    #[arg(default_value = "10000")]
+    latency: u64,
+    /// Process PID to trace
+    #[arg(default_value = "0")]
+    pid: i32,
+    /// Thread TID to trace
+    #[arg(default_value = "0")]
+    tid: i32,
+    /// Verbose debug output
+    #[arg(short, long)]
+    verbose: bool,
+}
+
+unsafe impl Plain for runqslower::types::event {}
+
+fn handle_event(data: &[u8]) -> i32 {
+    let event =
+        plain::from_bytes::<types::event>(data).expect("Data buffer was too short or unaligned");
+
+    let now = if let Ok(now) = OffsetDateTime::now_local() {
+        let format = format_description!("[hour]:[minute]:[second]");
+        now.format(&format)
+            .unwrap_or_else(|_| "00:00:00".to_string())
+    } else {
+        "00:00:00".to_string()
+    };
+
+    let task = str::from_utf8(&event.task).unwrap();
+
+    println!(
+        "{:8} {:16} {:<7} {:<14}",
+        now,
+        task.trim_end_matches(char::from(0)),
+        event.pid,
+        event.delta_us
+    );
+
+    0
+}
+
+fn main() -> Result<()> {
+    let opts = Command::parse();
+
+    let mut skel_builder = RunqslowerSkelBuilder::default();
+    if opts.verbose {
+        skel_builder.obj_builder.debug(true);
+    }
+
+    let mut open_object = MaybeUninit::uninit();
+    let mut open_skel = skel_builder.open(&mut open_object)?;
+    let rodata = open_skel
+        .maps
+        .rodata_data
+        .as_deref_mut()
+        .expect("`rodata` is not memory mapped");
+
+    // Write arguments into prog
+    rodata.min_us = opts.latency;
+    rodata.targ_pid = opts.pid;
+    rodata.targ_tgid = opts.tid;
+
+    // Begin tracing
+    let mut skel = open_skel.load()?;
+    skel.attach()?;
+    println!("Tracing run queue latency higher than {} us", opts.latency);
+    println!("{:8} {:16} {:7} {:14}", "TIME", "COMM", "TID", "LAT(us)");
+
+    let mut builder = RingBufferBuilder::new();
+    builder.add(&skel.maps.events, handle_event)?;
+    let ringbuf = builder.build()?;
+
+    loop {
+        ringbuf.poll(Duration::from_millis(100))?;
+    }
+}
